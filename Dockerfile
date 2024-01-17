@@ -13,3 +13,5 @@ RUN ./convert.sh
 COPY qpp.sh /qpp.sh
 
 RUN chmod +x /qpp.sh
+
+ENTRYPOINT ["/qpp.sh"]

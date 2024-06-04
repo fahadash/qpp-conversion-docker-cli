@@ -14,4 +14,7 @@ COPY qpp.sh /qpp.sh
 
 RUN chmod +x /qpp.sh
 
+RUN awk '!/server.port|server.ssl.key-store-type/' /qpp-conversion-tool/rest-api/src/main/resources/application.properties > tmpfile && mv tmpfile /qpp-conversion-tool/rest-api/src/main/resources/application.properties
+
+
 ENTRYPOINT ["/qpp.sh"]
